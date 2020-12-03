@@ -1,7 +1,7 @@
 #!/bin/sh
 
 BASE_URL="https://raw.githubusercontent.com/tacck/base-config-files/main"
-TARGET_SET="js-eslint-prettier"
+TARGET_SET="vue-eslint-prettier"
 CURL_OPT="-s"
 
 mkdir -p .vscode
