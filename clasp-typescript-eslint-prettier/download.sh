@@ -7,8 +7,12 @@ FILE_LIST="files.txt"
 
 mkdir -p .vscode src dist
 
+curl ${FILE_LIST}
+
 for file_name in $(cat ${FILE_LIST}); do
   CURL_OPT+=" -o ${f} ${BASE_URL}/${TARGET_SET}/${f}"
 done
 
-echo ${CURL_OPT}
+curl ${CURL_OPT}
+
+rm ${FILE_LIST}
