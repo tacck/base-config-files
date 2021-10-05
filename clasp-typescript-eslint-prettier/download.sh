@@ -1,15 +1,20 @@
-#!/bin/sh
+#!/bin/bash
 
 BASE_URL="https://raw.githubusercontent.com/tacck/base-config-files/main"
-TARGET_SET="typescript-eslint-prettier"
+TARGET_SET=$(basename $(pwd))
 CURL_OPT="-s"
+IGNORE_FILES=("README.md" "download.sh")
 
-mkdir -p .vscode
+mkdir -p .vscode src dist
 
-curl ${CURL_OPT} \
-  -O ${BASE_URL}/${TARGET_SET}/.editorconfig \
-  -O ${BASE_URL}/${TARGET_SET}/.eslintrc.js \
-  -O ${BASE_URL}/${TARGET_SET}/.prettierrc \
-  -O ${BASE_URL}/${TARGET_SET}/tsconfig.json \
-  -o .vscode/settings.json ${BASE_URL}/${TARGET_SET}/.vscode/settings.json
+for file_name in $(find . -type f); do
+  echo ${IGNORE_FILES[@]} | xargs -n 1 | grep -E "^$(basename ${file_name})$"
+  if [ $? -eq 0 ]; then
+    continue
+  fi
 
+  f=$(echo ${file_name} | sed 's/^\.\///')
+  CURL_OPT+=" -o ${f} ${BASE_URL}/${TARGET_SET}/${f}"
+done
+
+curl ${CURL_OPT}
