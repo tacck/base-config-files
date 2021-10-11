@@ -1,0 +1,12 @@
+package.json
+.babelrc
+tsconfig.json
+.vscode/settings.json
+.prettierrc
+.editorconfig
+.eslintrc.js
+.eslintignore
+src/index.ts
+src/main.ts
+webpack.config.js
+files.txt
