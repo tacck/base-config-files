@@ -9,7 +9,7 @@ yarn add -D typescript @types/node
 ```
 
 ```
-yarn add -D webpack webpack-cli @babel/core @babel/preset-typescript babel-loader
+yarn add -D webpack webpack-cli @babel/core @babel/preset-typescript babel-loader ts-loader
 ```
 
 ```
@@ -18,10 +18,6 @@ yarn add -D eslint eslint-loader @typescript-eslint/eslint-plugin @typescript-es
 
 ```
 curl https://raw.githubusercontent.com/tacck/base-config-files/main/typescript-eslint-prettier-webpack/download.sh | bash
-```
-
-```
-mkdir src dist
 ```
 
 package.json "scripts"
