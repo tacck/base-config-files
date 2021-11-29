@@ -17,7 +17,7 @@ yarn add -D webpack webpack-cli @babel/core @babel/preset-typescript babel-loade
 ```
 
 ```
-yarn add -D eslint eslint-loader @typescript-eslint/eslint-plugin @typescript-eslint/parser prettier eslint-config-prettier eslint-plugin-prettier
+yarn add -D eslint eslint-webpack-plugin @typescript-eslint/eslint-plugin @typescript-eslint/parser prettier eslint-config-prettier eslint-plugin-prettier
 ```
 
 ```
