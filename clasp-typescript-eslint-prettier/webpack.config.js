@@ -1,5 +1,6 @@
 const path = require('path');
 const GasPlugin = require('gas-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -20,13 +21,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
-      {
-        enforce: 'pre',
-        test: /\.[tj]s$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-      },
     ],
   },
-  plugins: [new GasPlugin()],
+  plugins: [new GasPlugin(), new ESLintPlugin()],
 };
